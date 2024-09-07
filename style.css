@@ -573,9 +573,10 @@ tbody tr:nth-child(4) {
 .service-grid > div > button:hover {
     background-color: #14B789;
     border: none;
+    
 }
 
-.service-grid > div > button > a:hover {
+.service-grid > div > button:hover a {
     color: white;
 }
 
