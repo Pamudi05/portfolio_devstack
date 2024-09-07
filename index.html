@@ -17,7 +17,7 @@
                     <div class="navbar-left">
                         <a href="index.html">First</a>
                         <ul>
-                            <li><a class="nav-link active" href="#home">Home</a></li>
+                            <li><a class="nav-link" href="#home">Home</a></li>
                             <li><a class="nav-link" href="#about">About</a></li>
                             <li><a class="nav-link" href="#service">Services</a></li>
                             <li><a class="nav-link" href="#project">Project</a></li>
@@ -298,6 +298,27 @@
     
 
     <script>
+        function changeActiveLink() {
+            const sections = document.querySelectorAll('.container > div[id]');
+            const navLinks = document.querySelectorAll('.navbar-left .nav-link');
+            
+            let index = sections.length;
+            
+            while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+            
+            navLinks.forEach((link) => link.classList.remove('active'));
+            if (navLinks[index]) {
+                navLinks[index].classList.add('active');
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const homeLink = document.querySelector('.navbar-left .nav-link[href="#home"]');
+            homeLink.classList.add('active');
+        });
+        
+        window.addEventListener('scroll', changeActiveLink);
+
         window.onscroll = function() {
             var navbar = document.querySelector('.navbar');
             if (window.pageYOffset > 50) {

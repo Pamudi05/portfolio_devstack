@@ -22,49 +22,62 @@
     position: fixed;
     padding-left: 20px;
     border-radius: 20px;
-
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent; /* Default background color */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 1000; 
 }
 
 .navbar.scrolled {
     background-color: white;
 }
 
-/* .navbar-left > a, 
-.navbar-left > ul > li > a, 
-.navbar-right > a {
-    color: white; 
-    transition: color 0.3s ease;
-} */
-
 .navbar.scrolled .navbar-left > a {
     color: black;
 }
-
 
 .navbar.scrolled .navbar-left > ul > li > a{
     color: rgba(77, 80, 77,0.8);
 }
 
+.navbar.scrolled .navbar-left > ul > li > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    color: #78e08f;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    color: #78e08f;
+}
+
+.navbar.scrolled .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    color: #78e08f;
+}
 
 .navbar.scrolled .navbar-right > a {
     color: #33c8c0;
 }
 
+.navbar.scrolled .navbar-right > a:hover {
+    border: 2px solid #33c8c0;
+    background-color: #33c8c0;
+    color: white;
+}
+
 .navbar.scrolled .navbar-right > span {
     background-color: #33c8c0;
+    color: white;
 }
+
 
 .navbar-left {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 800px;
+    width: 700px;
     height: 100%;
 }
 
@@ -74,7 +87,6 @@
     text-decoration: none;
     color: white;
 }
-
 
 .navbar-left > ul {
     width: 600px;
@@ -137,6 +149,7 @@
     display: flex;
     width: 80%;
     height: 400px;
+    margin-top: 50px;
 }
 
 .intro-left {
@@ -218,8 +231,8 @@
     margin-right:-50px;
     position: absolute;
     z-index: 22;
-    top: 220px;
-    right: 130px;
+    top: 170px;
+    right: 100px;
 }
 
 .about {
@@ -797,12 +810,11 @@ tbody tr:nth-child(4) {
 .contact-form-right > div {
     margin-top: 8px;
     display: flex;
-    justify-content: space-between;
-    gap: 5px;
+    gap: 12px;
 }
 
 .contact-form-right > div > input {
-    width: 300px;
+    width: 335px;
     height: 50px;
     border: 2px solid rgba(110, 112, 114, 0.3);
     padding: 10px;
